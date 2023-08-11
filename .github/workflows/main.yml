@@ -7,8 +7,14 @@ jobs:
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - uses: hashicorp/setup-terraform@v2
+
       - run : terraform --version
+
       - name: Install oc
         uses: redhat-actions/oc-installer@v1
         with:
           oc_version: '4.6'
+
+      - name: Kubectl tool installer
+        uses: Azure/setup-kubectl@v3
+      - run : kubectl -h
