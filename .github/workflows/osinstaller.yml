@@ -1,5 +1,5 @@
 name: OpenShift Self-Hosted Installer Workflow
-on: [ push, workflow_dispatch ]
+on: [ push]
 
 jobs:
   install-runner:
