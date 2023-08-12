@@ -1,0 +1,25 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/aks_create_action@v1
+        with:
+          CLUSTER_NAME: testCluster
+          RESOURCE_GROUP_NAME: newGroup
+          STORAGE_ACCOUNT_NAME: newgroup27941
+          STORAGE_CONTAINER_NAME: testclustertstate
+          STORAGE_ACCESS_KEY: ******
+          ARM_CLIENT_ID: ******
+          ARM_CLIENT_SECRET: ******
+          ARM_SUBSCRIPTION_ID: ******
+          ARM_TENANT_ID: ******
+          ACTION_TYPE: create # optional
+          CLUSTER_SIZE: dev # optional
+          CREATE_ACR: false # optional
