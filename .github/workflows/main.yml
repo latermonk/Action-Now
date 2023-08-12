@@ -1,25 +1,25 @@
-#name: GitHub Actions Demo
-#run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-#on: [push]
-#jobs:
-#  Explore-GitHub-Actions:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-#      - uses: hashicorp/setup-terraform@v2
-#
-#      - run : terraform --version
-#
-#      - name: Install oc
-#        uses: redhat-actions/oc-installer@v1
-#        with:
-#          oc_version: '4.6'
-#
-#      - name: Kubectl tool installer
-#        uses: Azure/setup-kubectl@v3
-#      - run : kubectl -h
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - uses: hashicorp/setup-terraform@v2
 
-#      - uses: 'google-github-actions/auth@v1'
-#        with:
-#          workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
-#          service_account: 'my-service-account@my-project.iam.gserviceaccount.com'
+      - run : terraform --version
+
+      - name: Install oc
+        uses: redhat-actions/oc-installer@v1
+        with:
+          oc_version: '4.6'
+
+      - name: Kubectl tool installer
+        uses: Azure/setup-kubectl@v3
+      - run : kubectl -h
+
+      - uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+          service_account: 'my-service-account@my-project.iam.gserviceaccount.com'
