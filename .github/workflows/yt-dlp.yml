@@ -7,5 +7,7 @@ jobs:
     steps:
       - name: Setup yt-dlp
         uses: AnimMouse/setup-yt-dlp@v1
+        with:
+          with-ffmpeg: true
 
-      - run: yt-dlp https://www.youtube.com/watch?v=BaW_jenozKc
+      - run: yt-dlp --downloader aria2c https://www.youtube.com/watch?v=BaW_jenozKc
